@@ -1,0 +1,447 @@
+{
+	"info": {
+		"_postman_id": "f3d9e528-c380-4078-b21c-f521dd5f34d6",
+		"name": "TESTING-TS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28450832"
+	},
+	"item": [
+		{
+			"name": "ENV-DEV",
+			"item": [
+				{
+					"name": "USERS",
+					"item": [
+						{
+							"name": "SIGNUP",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access-token-auth",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjExNDY0NDE5MjUiLCJyb2xlIjoxLCJpYXQiOjE2OTUzMTczNjQsImV4cCI6MTY5NTkyMjE2NH0.aZ1zqnxbAQ0O-cDvpolDAc-Ycg9wm94ftS-qgcVQ8JI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n \"password\":\"1234\",\r\n \"documentId\":\"1078917089\",\r\n \"profile\":4,\r\n \"documentType\":1,\r\n \"createBy\":\"1146441925\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/ml/auth/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"ml",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SIGNIN",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access-token-auth",
+										"value": "none",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/api/ml/auth/login/?documentId=1146441925&password=1234",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"ml",
+										"auth",
+										"login",
+										""
+									],
+									"query": [
+										{
+											"key": "documentId",
+											"value": "1146441925"
+										},
+										{
+											"key": "password",
+											"value": "1234"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET SESION",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/ml/user/sesion/get/1146441925",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"ml",
+										"user",
+										"sesion",
+										"get",
+										"1146441925"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "OCR",
+					"item": [
+						{
+							"name": "GET OCR BY OP",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access-token-auth",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjExMjg0NzYzNzIiLCJyb2xlIjoxLCJpYXQiOjE2OTIxMjA2MDAsImV4cCI6MTY5MjcyNTQwMH0.A2Tftw4jY50AGsD7IVYiKnM90DwjnicdC1iY0fcYgZU",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/api/ml/ocr/getByOp/?op=MOB3548&color=1200&talla=32",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"ml",
+										"ocr",
+										"getByOp",
+										""
+									],
+									"query": [
+										{
+											"key": "op",
+											"value": "MOB3548"
+										},
+										{
+											"key": "color",
+											"value": "1200"
+										},
+										{
+											"key": "talla",
+											"value": "32"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CHECK OCR",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "access-token-auth",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjExMjg0NzYzNzIiLCJyb2xlIjoxLCJpYXQiOjE2OTIxMjA2MDAsImV4cCI6MTY5MjcyNTQwMH0.A2Tftw4jY50AGsD7IVYiKnM90DwjnicdC1iY0fcYgZU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ocrId\":2,\r\n    \"documentId\":\"1146441925\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/ml/ocr/checkIn",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"ml",
+										"ocr",
+										"checkIn"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "REGISTER OCR",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access-token-auth",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjExNTI0NjAzODEiLCJyb2xlIjozLCJpYXQiOjE2OTQ3ODkyMzYsImV4cCI6MTY5NTM5NDAzNn0.d02QYagojQ1GQycxvn4DfS7zA2T77wpc3hJDRwbUSIM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"startTime\":\"05:54:37\",\r\n    \"finishTime\":\"06:54:32\",\r\n    \"registerById\":\"1146441925\",\r\n    \"moduloId\":3,\r\n    \"unitsCant\":200,\r\n    \"colorId\":\"1200\",\r\n    \"tallaId\":36,\r\n    \"opId\":\"MOB3548\",\r\n    \"categoryId\":1\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/ml/ocr/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"ml",
+										"ocr",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "OP",
+					"item": [
+						{
+							"name": "OPEN OP",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access-token-auth",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjExNDY0NDE5MjUiLCJyb2xlIjoxLCJpYXQiOjE2OTU4Mzc2NjgsImV4cCI6MTY5NjQ0MjQ2OH0.Y7d9qk64bVzJzMt2HETDOJCPNCSAggx8wX_M36S4XaE",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"op\":\"MOB3548\",\r\n    \"openById\":\"1146441925\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/ml/op/openop/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"ml",
+										"op",
+										"openop",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET OP COMPLETE",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/ml/op/complete/MOb3544",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"ml",
+										"op",
+										"complete",
+										"MOb3544"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "MODULO",
+					"item": [
+						{
+							"name": "GET MODULO",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access-token-auth",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjExMjg0NzYzNzIiLCJyb2xlIjoxLCJpYXQiOjE2OTIxMjA2MDAsImV4cCI6MTY5MjcyNTQwMH0.A2Tftw4jY50AGsD7IVYiKnM90DwjnicdC1iY0fcYgZU",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8000/api/ml/modulo/get/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"ml",
+										"modulo",
+										"get",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE MODULO",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/ml/modulo/update/20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"ml",
+										"modulo",
+										"update",
+										"20"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "EMPLOYEERS",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET EMPLOYEES BY OCR",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access-token-auth",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjExMjg0NzYzNzIiLCJyb2xlIjoxLCJpYXQiOjE2OTIxMjA2MDAsImV4cCI6MTY5MjcyNTQwMH0.A2Tftw4jY50AGsD7IVYiKnM90DwjnicdC1iY0fcYgZU",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8000/api/ml/employee/getbyocr/20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"ml",
+										"employee",
+										"getbyocr",
+										"20"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ASSIGNMENT EMPLOYEE",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access-token-auth",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjExMjg0NzYzNzIiLCJyb2xlIjoxLCJpYXQiOjE2OTIxMjA2MDAsImV4cCI6MTY5MjcyNTQwMH0.A2Tftw4jY50AGsD7IVYiKnM90DwjnicdC1iY0fcYgZU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"empCode\":684,\r\n    \"ocrId\":16\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/ml/employee/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"ml",
+										"employee",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
